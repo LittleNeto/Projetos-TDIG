@@ -1,0 +1,171 @@
+footer {
+  display: flex;
+  height: 175px;
+  background-color: #262142ff;
+  color: white;
+  font-family: sans-serif;
+}
+
+.Navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: #46acc2;
+  display: flex;
+  padding: 16px;
+  font-family: sans-serif;
+  color: white;
+  height: 75px;
+  align-items: center;
+  z-index: 1000;
+}
+
+.Navbar_links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.Navbar_links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 35px;
+}
+
+.Navbar_links a:hover {
+  color: #ccc;
+}
+
+.Welcome {
+  display: flex;
+  align-items: center;
+
+  height: 800px;
+  justify-content: center;
+  font-family: sans-serif;
+}
+
+.Projects-title {
+  display: flex;
+  font-family: sans-serif;
+  justify-content: center;
+}
+
+.Projects {
+  display: flex;
+  height: 900px;
+  font-family: sans-serif;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+.project-tile {
+  display: flex;
+  background-color: #35287cff;
+  width: 360px;
+  height: 400px;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+.project-tile a {
+  display: flex;
+  color: white;
+  justify-content: center;
+  font-family: sans-serif;
+  flex-direction: column;
+}
+
+.Image {
+  display: flex;
+  width: 375px;
+  height: 325px;
+  justify-content: center;
+  width: 90%;
+  border-left: 5px #35287cff;
+  border-right: 5px #35287cff;
+  margin: 0 auto;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.Contacts {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  color: white;
+  font-family: sans-serif;
+  width: 100%;
+}
+
+.Contacts a {
+  display: flex;
+  color: white;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-weight: 500;
+  font-size: 25px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.Contacts a:hover {
+  color: #ccc;
+}
+
+.Profile {
+  display: flex;
+  font-family: sans-serif;
+  justify-content: center;
+  text-decoration: none;
+  flex-direction: column;
+}
+
+.Profile a {
+  display: flex;
+  font-family: sans-serif;
+  color: white;
+  justify-content: center;
+  text-decoration: none;
+  width: 100%;
+  flex-direction: column;
+}
+
+.Profile a:hover {
+  color: #ccc;
+}
+
+@media (max-width: 1024px) {
+  .Navbar_links a {
+    font-size: 18px;
+  }
+  .Profile-link a {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .Navbar_links {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .Navbar_links a {
+    font-size: 16px;
+  }
+  .Profile-link a {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .Navbar_links a,
+  .Profile-link a {
+    font-size: 14px;
+  }
+}
