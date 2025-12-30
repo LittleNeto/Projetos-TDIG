@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>https://survey-form.freecodecamp.rocks/</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 id="title">freeCodeCamp Survey Form</h1>
+    <p id="description">Thank you for taking the time to help us improve the platform</p>
+    <form id="survey-form">
+        <main>
+            <label id="name-label">Please enter your name</label>
+            <br>
+            <input type="text" placeholder="Enter your name" class="text_box" id="name" required>
+            <br>
+            <label id="email-label">Please enter your email address</label>
+            <br>
+            <input type="email" placeholder="Enter your Email" class="text_box" id="email" required>
+            <br>
+            <label id="number-label">Please enter your age</label>
+            <br>
+            <input type="number" placeholder="Age" class="text_box" id="number" min=12 max=120>
+            <br>
+            <label for="current-role">Which option best describes your current role?</label>
+            <br>
+            <select name="current-role" id="dropdown">
+                <option value="select-current-role" disabled selected value>Select current role</option>
+                <option value="student">Student</option>
+                <option value="full-time-job">Full Time Job</option>
+                <option value="full-time-learner">Full Time Learner</option>
+                <option value="prefer-not-to-say">Prefer not to say</option>
+                <option value="other">Other</option> 
+            </select>
+            <br>
+            <label for="recommendation">Would you recommend freeCodeCamp to a friend?</label>
+            <br>
+            <label>
+            <input
+              name="user-recommend"
+              value="definitely"
+              type="radio"
+              class="input-radio"
+              checked
+            />Definitely</label
+          >
+          <label>
+            <input
+              name="user-recommend"
+              value="maybe"
+              type="radio"
+              class="input-radio"
+            />Maybe</label
+          >
+
+          <label
+            ><input
+              name="user-recommend"
+              value="not-sure"
+              type="radio"
+              class="input-radio"
+            />Not sure</label
+          >
+
+          <br>
+            <select name="favourite-feature" id="favourite-feature">
+                <option value="select-an-option" disabled selected value>Select an option</option>
+                <option value="challenges">Challenges</option>
+                <option value="projects">Projects</option>
+                <option value="community">Community</option>
+                <option value="open-source">Open Source</option>
+            </select>
+            <br>
+            <label for="improvement">What would you like to see improved? (Check all that apply)</label>
+            <br>
+            <label for="front-end-projects"><input type="checkbox" value="front-end-projects"> Front-end Projects</label>
+            <br>
+            <label for="back-end-projects"><input type="checkbox" value="back-end-projects"> Back-end Projects</label>
+            <br>
+            <label for="data-visualisation"><input type="checkbox" value="data-visualisation"> Data Visualisation</label>
+            <br>
+            <label for="challenges"><input type="checkbox" value="challenges"> Challenges</label>
+            <br>
+            <label for="open-source-community"><input type="checkbox" value="open-source-community"> Open Source Community</label>
+            <br>
+            <label for="gitter-help-rooms"><input type="checkbox" value="gitter-help-rooms"> Gitter help rooms</label>
+            <br>
+            <label for="videos"><input type="checkbox" value="videos">  Videos</label>
+            <br>
+            <label for="city-meetups"><input type="checkbox" value="city-meetups"> City Meetups</label>
+            <br>
+            <label for="wiki"><input type="checkbox" value="wiki"> Wiki</label>
+            <br>
+            <label for="Forum"><input type="checkbox" value="forum"> Forum</label>
+            <br>
+            <label for="additional-courses"><input type="checkbox" value="additional-courses"> Additional Courses</label>
+            <br>
+            <label for="comments">Any comments or suggestions?</label>
+            <br>
+            <textarea name="comments" id="comments" placeholder="Enter your comments here..." class="final_text_box"></textarea>
+            <br>
+            <button id="submit" type="submit">Submit</button>
+        </main>
+    </form>
+</body>
+</html>

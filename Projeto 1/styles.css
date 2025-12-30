@@ -1,0 +1,53 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: rgba(13, 13, 80, 0.788);
+    text-align: center;
+}
+
+h1, p, main {
+    color: white;
+}
+
+main {
+    width: 600px;
+    height: 1300px;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    margin: auto;
+    display: grid;
+    justify-items: start;
+    padding: 14px;
+    background-color: black;
+}
+
+select, .text_box, .final_text_box, button {
+    width: 586px;
+}
+
+.text_box, button, select {
+    height: 35px;
+}
+
+.final_text_box {
+    height: 120px;
+    line-height: 20px;
+    padding-top: 10px;
+}
+
+button {
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    padding: 14px;
+}
+
+.input-radio {
+  display: inline-block;
+  margin-right: 0.625rem;
+  min-height: 1.25rem;
+  min-width: 1.25rem;
+}
