@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="color-scheme" content="light dark">
+        <link rel = "stylesheet" href="styles.css">
+    </head>
+    <body>
+        <!-- Navbar que fica do lado esquerdo da tela com o sumário-->
+        <div class="navbar-container">
+            <nav id="navbar"> 
+                <header>Sumário</header>
+                <br>
+                <a class="nav-link" href="#introdução">Introdução</a>
+                <a class="nav-link" href="#Aplicando_o_Elemento">Aplicando o Elemento</a>
+                <a class="nav-link" href="#unidades_e_talentos">Unidades e Talentos</a>
+                <a class="nav-link" href="#Reações_e_Custo">Reações e Custo</a>
+                <a class="nav-link" href="#Multiplicadores_de_Custo">Multiplicadores de Custo</a>
+                <a class="nav-link" href="#Ordem_dos_Elementos">Ordem dos Elementos</a>
+                <a class="nav-link" href="#Conclusão">Conclusão</a>
+            </nav>
+        </div>
+    </div>
+
+    <div id="cornerKeqing">
+        <a href="https://keqingmains.com"><img src="./imgs/emojis/Keqing/keqing-thumbs-up.webp" alt="Keqing" width="96" height="96"></a>
+        <div id="mouse-hover-ckq">Dados retirados do Keqing Mains </div>
+    </div>
+
+    <main id="main-doc">
+
+    <h1 style="font-family: 'Gill Sans MT'; color: rgb(164, 66, 228);">Teoria do Medidor Elemental</h1>
+    <h5 style="margin-top: -20px; color: rgba(137, 43, 226, 0.653);">Elemental Gauge Theory</h5>
+
+    <section class="main-section" id="introdução">
+        <header>Introdução</header>
+
+        <p> No Genshin Impact, existem 7 elementos,&NonBreakingSpace;
+            Anemo <img src="./imgs/elements/anemoSymbol.webp" alt="anemo" width="16" height="16">,&NonBreakingSpace;
+            Geo <img src="./imgs/elements/geoSymbol.webp" alt="geo" width="16" height="16">,&NonBreakingSpace;
+            Pyro <img src="./imgs/elements/pyroSymbol.webp" alt="pyro" width="16" height="16">,&NonBreakingSpace;
+            Cryo <img src="./imgs/elements/cryoSymbol.webp" alt="cryo" width="16" height="16">,&NonBreakingSpace;
+            Hydro <img src="./imgs/elements/hydroSymbol.webp" alt="hydro" width="16" height="16">,&NonBreakingSpace;
+            Electro <img src="./imgs/elements/electroSymbol.webp" alt="electro" width="16" height="16">,&NonBreakingSpace;
+            e Dendro <img src="./imgs/elements/dendroSymbol.webp" alt="dendro" width="16" height="16">.  
+            Cada personagem jogável tem acesso à apenas um desses 7.
+            Ao atacar um inimigo com um ataque que cause <em>dano elemental</em>, o elemento correspondente a esse ataque é aplicado no inimigo.
+        </p>
+            <p> Da perspectiva do jogador, isto parece bem simples, já que o jogo simplesmente mostra caso o inimigo esteja afetado por um elemento ou não, o que traz a ideia de um estado binário. Esse estado, no qual o inimigo se encontra afetado por um determinado elemento, é chamado de <strong>Aura Elemental.</strong> </p>
+            <p> Porém, por debaixo dos panos, existe um sistema mais complexo que determina se o inimigo está ou não afetado por um elemento. Esse sistema é chamado de <strong>Medidor Elemental</strong>. Quando você aplica um elemento no inimigo, você aplica uma <em>certa quantidade</em> daquele elemento, a qual varia dependendo do talento do personagem que aplica o elemento. Essa quantidade decai com o tempo, e eventualmente a Aura se esvai. Por isso o nome <em>Medidor Elemental</em>.</p>
+        
+        <p>Importante ressaltar que nem Anemo nem Geo podem aplicar auras nos inimigos. Esses elementos só podem ativar reações com auras já existentes.</p>
+
+    </section>
+    <section class="main-section" id="Aplicando_o_Elemento">
+        <header>Aplicando o Elemento</header>
+
+        <p>A quantidade aplicada de um certo elemento pelo personagem é chamada simplesmente de <strong>Unidade de Medida</strong> (U) ou <em>Gauge Units</em>. Ao aplicar Unidades em um inimigo, ele passa a possuir uma <strong>Aura</strong> correspondente, que decai com o tempo. Quanto mais unidades forem aplicadas, maior será a <em>medida da aura</em> no inimigo, e, portanto, levará mais tempo até que a aura se esvaia por completo. Vale ressaltar que, quando você reaplica o elemento em um inimigo que está com uma Aura do mesmo elemento, a Aura resultante não é igual a soma das unidades aplicadas anteriormente. O jogo simplesmente atualiza a Aura com o medidor equivalente a nova quantidade reaplicada, desde que esta seja maior do que o medidor da aura no presente inimigo.</p>
+        
+        <table class="infotable">
+            <thead>
+            <tr>
+                <th>Quantidade aplicada</th>
+                <th>Taxa de decaimento</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1U</td>
+                <td>11.875s por unidade</td>
+            </tr>
+            <tr>
+                <td>1.5U</td>
+                <td>8.9583s por unidade</td>
+            </tr>
+            <tr>
+                <td>2U</td>
+                <td>7.5s por unidade</td>
+            </tr>
+            <tr>
+                <td>4U</td>
+                <td>5.3125s por unidade</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <p>Por exemplo: </p>
+        <table class="exemplos">
+            <tr>
+                <td class="celula-personagem">
+                    <img src="./imgs/emojis/Kaeya/kaeya-haha.webp" alt="Kaeya"> 
+                    <p>
+                        <a href="https://genshin-impact.fandom.com/wiki/Kaeya" rel="noopener noreferrer">Kaeya</a>
+                    </p>
+                </td>
+
+                <td class="exemplo-texto">
+                    <code> * Habilidade Elemental do Kaeya aplica 2U de aura Cryo <img src="./imgs/elements/cryoSymbol.webp" alt="cryo" width="18" height="18">.</code>
+                    <br><br>
+                    <code> ==> -1U a cada 7,5s.</code>
+                    <br><br>
+                    <code> ==>  em 15s, a aura se esvai.</code>
+                </td>
+            </tr>
+        </table>
+        <br><br>
+        
+        <p>Entretanto, não é bem assim que funciona na prática, pois ainda há mais uma mecânica que vem à tona no momento em que o elemento é aplicado: a <strong>Aura tax</strong> ou, em português, Imposto de Aura. <br>
+        A Aura tax é sempre imposta no momento em que a Aura é aplicada, e reduz o medidor de aura em 20%. Ou seja, toda aura inicial é taxada no momento de sua aplicação e dura menos tempo do que o que seria esperado.</p>
+        <br>
+
+        <table class="infotable">
+            <thead>
+                <tr>
+                    <th>Quantidade aplicada</th>
+                    <th>Depois do Imposto de Aura</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1U</td>
+                    <td>0.8U</td>
+                </tr>
+                <tr>
+                    <td>1.5U</td>
+                    <td>1.2U</td>
+                </tr>
+                <tr>
+                    <td>2U</td>
+                    <td>1.6U</td>
+                </tr>
+                <tr>
+                    <td>4U</td>
+                    <td>3.2U</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <p>Então, na verdade, seria: </p>
+        <table class="exemplos">
+            <tr>
+                <td class="celula-personagem">
+                    <img src="./imgs/emojis/Kaeya/kaeya-sigh.webp" alt="Kaeya"> 
+                    <p>
+                        <a href="https://genshin-impact.fandom.com/wiki/Kaeya" rel="noopener noreferrer">Kaeya</a>
+                    </p>
+                </td>
+
+                <td class="exemplo-texto">
+                    <code> * Habilidade Elemental do Kaeya aplica 2U de aura Cryo <img src="./imgs/elements/cryoSymbol.webp" alt="cryo" width="18" height="18">.</code>
+                    <br><br>
+                    <code> ==> 2U * 0.8 = 1.6U </code>
+                    <br><br>
+                    <code> ==> -1U a cada 7,5s. (Continua sendo o mesmo tempo, já que o Kaeya aplica 2U logo de início)</code>
+                    <br><br>
+                    <code> ==>  em 13,25s, a aura se esvai.</code>
+                </td>
+            </tr>
+        </table>
+        <br><br>
+        
+    </section>
+
+    <section class="main-section" id="unidades_e_talentos">
+        <header>Unidades e Talentos</header>
+        <p>Cada personagem jogável tem aplicações de U específicas. Em geral, a mais comum são as de 1U e 2U. Mas também existem aplicações de 3U, 4U e 1,5U. Abaixo, segue um banco de dados feito e mantido pelo <a href="https://keqingmains.com/">KQM</a> com todas as quantias de U aplicadas por cada talento de todos os personagens.</p>
+        
+        <div class="containerDB">
+            <div id="keqing-flowers">
+                <img src="./imgs/emojis/Keqing/keqing-flowers.webp" alt="keqing" width="128" height="128">
+            </div>
+
+            <div id="database-link-ref">
+                <a href="https://library.keqingmains.com/resources/compendiums/elemental-gauges" style="text-decoration: none;">
+                    <h2 style="text-decoration: none;">
+                    📄️ Elemental Gauge Database
+                    </h2>
+                </a>
+            </div>
+        </div>
+    
+    </section>
+
+    <br>
+    <section class="main-section" id="Reações_e_Custo">
+        <header>Reações e Custo</header>
+
+        <p>Genshin é um jogo governado pelo robusto sistema de reações. Quando dois elementos se colidem, uma reação elemental é ativada. Assim, quando o inimigo tem uma Aura, e aplicamos um outro elemento que possa reagir com a aura, será ativada a <em>reação elemental</em> correspondente.</p><br>
+        <p>Quando uma reação é ativada, ela consome uma certa quantidade da aura no inimigo, tal consumo é proporcional a unidade de medida do talento que reagiu com essa aura. A partir de agora, chamaremos do elemento que reagiu sobre uma aura de <strong>trigger</strong>.</p>
+
+        <p>Por exemplo:</p>
+        <table class="exemplos">
+            <tr>
+                <td class="celula-personagem">
+                    <img src="./imgs/emojis/Hilichurl/hilichurl-shiver.webp" alt="Hilichurl"> 
+                </td>
+
+                <td class="exemplo-texto">
+                    <code>Imagine que o Kaeya usou sua Habilidade Elemental e aplicou 2U de Cryo <img src="./imgs/elements/cryoSymbol.webp" alt="cryo" width="18" height="18">.</code> <br><br>
+                    <code>Desse modo: 2U * 0.8 = 1.6U &NonBreakingSpace; Agora o Hilichurl se encontra com 1.6 de Aura Cryo</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="celula-personagem">
+                    <img src="./imgs/emojis/Yae-Miko/yae-miko-you-scared.webp" alt="Yae Miko"> 
+                </td>
+
+                <td class="exemplo-texto">
+                    <code>Agora, Yae Miko usa seu ataque normal, que aplica 1U de Electro <img src="./imgs/elements/electroSymbol.webp" alt="electro" width="18" height="18"> e reage com a Aura Cryo do Hilichurl, e ativa a reação de Supercondução.</code> <br><br>
+                    <code>Desse modo: O trigger consome 1U da Aura Cryo do Hilichurl.</code> <br><br>
+                    <code>Portanto, o Hilichurl agora possui: 1.6U - 1U = 0.6U de Aura Cryo restante.</code>
+                </td>
+            </tr>
+        </table>
+
+        <p>Porém, nem todas as reações são iguais. Cada reação tem um custo de energia associado, que é o quanto de aura é consumido para ativá-la.
+            Algumas reações tem multiplicadores maiores, e outras têm menores. Supercondução tem um multiplicador de 1, por isso a aura consumida pelo ataque da Yae Miko é de igual ao 1U aplicado pelo ataque.</p>
+        </section>
+    
+    <section class="main-section" id="Multiplicadores_de_Custo">
+        <header>Multiplicadores de Custo</header>
+
+        <p>Aqui estão listadas todas as reações e seus respectivos multiplicadores.</p>
+        <h2>Reações com multiplicador 1x</h2>
+        <ul>
+            <li>
+                Supercondução (Electro <img src="./imgs/elements/electroSymbol.webp" alt="electro" width="16" height="16"> + Cryo <img src="./imgs/elements/cryoSymbol.webp" alt="cryo" width="16" height="16">).
+            </li>
+            <li>
+                Sobrecarga (Electro <img src="./imgs/elements/electroSymbol.webp" alt="electro" width="16" height="16"> + Pyro <img src="./imgs/elements/pyroSymbol.webp" alt="pyro" width="16" height="16">).
+            </li>
+        </ul>
+        <p>Nessas reações, a ordem dos elementos não altera o custo de aura. Ou seja, aplicar Electro <img src="./imgs/elements/electroSymbol.webp" alt="electro" width="16" height="16"> sobre uma aura Cryo <img src="./imgs/elements/cryoSymbol.webp" alt="cryo" width="16" height="16"> ou vice-versa, sempre consumirá 1U da aura presente no inimigo.</p>
+
+    <h2>Reações com multiplicador de 0.5x</h2>
+    <ul>
+        <li>
+            Cristalizar (Geo <img src="./imgs/elements/geoSymbol.webp" alt="geo" width="16" height="16"> + Pyro <img src="./imgs/elements/pyroSymbol.webp" alt="pyro" width="16" height="16"> / Hydro <img src="./imgs/elements/hydroSymbol.webp" alt="hydro" width="16" height="16"> / Electro <img src="./imgs/elements/electroSymbol.webp" alt="electro" width="16" height="16"> / Cryo <img src="./imgs/elements/cryoSymbol.webp" alt="cryo" width="16" height="16">).
+        </li>
+        <li>
+            Redemoinho (Anemo <img src="./imgs/elements/anemoSymbol.webp" alt="anemo" width="16" height="16"> + Pyro <img src="./imgs/elements/pyroSymbol.webp" alt="pyro" width="16" height="16"> / Hydro <img src="./imgs/elements/hydroSymbol.webp" alt="hydro" width="16" height="16"> / Electro <img src="./imgs/elements/electroSymbol.webp" alt="electro" width="16" height="16"> / Cryo <img src="./imgs/elements/cryoSymbol.webp" alt="cryo" width="16" height="16">).
+        </li>
+        <li>
+            Derretimento Reverso (Pyro <img src="./imgs/elements/pyroSymbol.webp" alt="pyro" width="16" height="16"> + Cryo <img src="./imgs/elements/cryoSymbol.webp" alt="cryo" width="16" height="16">).
+        </li>
+        <li>
+            Vaporização Reversa (Hydro <img src="./imgs/elements/hydroSymbol.webp" alt="hydro" width="16" height="16"> + Pyro <img src="./imgs/elements/pyroSymbol.webp" alt="pyro" width="16" height="16">).
+        </li>
+        <li>
+            Florescimento Reverso (Dendro <img src="./imgs/elements/dendroSymbol.webp" alt="dendro" width="16" height="16"> + Hydro <img src="./imgs/elements/hydroSymbol.webp" alt="hydro" width="16" height="16">).
+        </li>
+    </ul>
+    <p>Nessas reações, a aura consumida é igual a metade do elemento aplicado. Note que a ordem é importante nas reações de Derretimento e Vaporização. Falaremos mais sobre isso <a href="#Ordem_dos_Elementos">depois.</a></p>
+
+    <h2>Reações com multiplicador de 2x</h2>
+    <ul>
+        <li>
+            Derretimento Direto (Cryo <img src="./imgs/elements/cryoSymbol.webp" alt="cryo" width="16" height="16"> + Pyro <img src="./imgs/elements/pyroSymbol.webp" alt="pyro" width="16" height="16">).
+        </li>
+        <li>
+            Vaporização Direta (Pyro <img src="./imgs/elements/pyroSymbol.webp" alt="pyro" width="16" height="16"> + Hydro <img src="./imgs/elements/hydroSymbol.webp" alt="hydro" width="16" height="16">).
+        </li>
+        <li>
+            Florescimento Direto (Hydro <img src="./imgs/elements/hydroSymbol.webp" alt="hydro" width="16" height="16"> + Dendro <img src="./imgs/elements/dendroSymbol.webp" alt="dendro" width="16" height="16">).
+        </li>
+    </ul>
+    <p>A ordem é bem importante nas reações de 2x. Mais sobre isso em <a href="#Ordem_dos_Elementos">Ordem dos Elementos</a>.</p>
+
+    <p>As reações de Eletricamente-carregado (<img src="./imgs/elements/hydroSymbol.webp" alt="hydro" width="16" height="16"> x <img src="./imgs/elements/electroSymbol.webp" alt="electro" width="16" height="16">) e Congelamento (<img src="./imgs/elements/hydroSymbol.webp" alt="hydro" width="16" height="16"> x <img src="./imgs/elements/cryoSymbol.webp" alt="cryo" width="16" height="16">) &NonBreakingSpace;
+    não possuem multiplicadores no sentido convencional (apesar de que Congelamento tenha um multiplicador de 0.5x quando ativado, independentemente da ordem). Ao invés disso, elas geram um efeito de status diferente das outras reações que pode ser combinado com outros elementos.</p>
+
+    <h2>Congelamento</h2>
+    <p>Assim que você ativar Congelamento, o inimigo será afetado por uma Aura diferente chamada Aura Congelante. Essa Aura funciona exatamente como um Aura Cryo, mas, enquanto o inimigo continuar com essa aura este não pode se mover. Além disso, Cryo e Hydro podem coexistir com a aura Congelante, mas o jogo só mostra a Aura de Cryo por cima. Remover a aura Congelante, seja por meio de Derreter ou Estilhaçar, vai expor a aura Cryo/Hydro coexistente, permitindo que quaisquer fontes elementais reajam com Cryo/Hydro. Mesmo enquanto a aura Cryo/Hydro estiver oculta sob a aura Congelante, ela continuará a se dissipar normalmente.
+    A reação de Congelamento é prolongada quando Cryo ou Hydro é aplicado ao com uma aura Hydro ou Cryo coexistente, respectivamente.</p>
+
+    <h2>Eletricamente-carregado</h2>
+    <p>Eletricamente-carregado (EC) é uma reação única, diferente de todas as anteriores. Basicamente, enquanto EC estiver ativo, os elementos Hydro e Electro funcionam simultaneamente e coexistem como aura e trigger.</p>
+    <p>EC é ativado quando um inimigo com aura Hydro ou Electro recebe o outro elemento. A reação de EC então será ativada uma vez a cada segundo, desde que haja medidas (U) suficientes nas auras de Electro e Hydro.<p>
+    <p>Cada tick de EC consome 0.4U tanto da Aura Hydro, quanto da Aura Electro remanescentes. Quando quaisquer das auras se esgotarem, a aura que sobrou ainda fica presente no inimigo.</p>
+    </section> 
+
+    <section class="main-section" id="Ordem_dos_Elementos">
+        <header>Ordem dos Elementos</header>
+        <p>A ordem dos fatores não altera o resultado? Bem, aqui é diferente... A ordem importa, e muito, na hora de construir um time que possa ativar reações consistentemente.
+            Algumas reações consomem menos Aura do que outras dependendo da ordem em que os elementos são aplicados. 
+        </p>
+        <p>Como mencionado anteriormente, existem reações reversas (com multiplicador de 0.5x) e reações diretas (com multiplicador de 2x), onde a ordem dos elementos pode afetar a maneira como o time inteiro funciona.</p>
+        <p>Isso porque as reações reversas consomem menos aura, mas, em geral, oferecerem menos conversão em dano. Por outro lado, as reações diretas consomem mais aura, mas oferecem mais conversão em dano. A única exceção a essa regra é a reação de Florescimento, que sempre gera uma semente de dendro independente da ordem.</p>
+
+        <h4>Por exemplo:</h4>
+
+        <table class="exemplos">
+            <tr>
+                <td class="celula-personagem">
+                    <img src="./imgs/emojis/Citlali/citlali-doze.webp" alt="Citlali"> 
+                    <p>
+                        <a href="https://genshin-impact.fandom.com/wiki/Citlali" rel="noopener noreferrer">Citlali</a>
+                    </p>
+                </td>
+
+                <td class="exemplo-texto">
+                    <code> * Habilidade Elemental da Citlali aplica 1.5U de Cryo <img src="./imgs/elements/cryoSymbol.webp" alt="cryo" width="18" height="18">.</code>
+                    <br><br>
+                    <code> ==> 1.5U * 0.8 = 1.2U de Aura Cryo <img src="./imgs/elements/cryoSymbol.webp" alt="cryo" width="18" height="18"> no inimigo </code>
+                    <br><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="celula-personagem">
+                    <img src="./imgs/emojis/Xiangling/xiangling-wok.webp" alt="Xiangling" style="width: 150px;"> 
+                    <p>
+                        <a href="https://genshin-impact.fandom.com/wiki/Xiangling" rel="noopener noreferrer">Xiangling</a>
+                    </p>
+                </td>
+
+                <td class="exemplo-texto">
+                    <code> * O supremo da Xiangling aplica 1U de Pyro <img src="./imgs/elements/pyroSymbol.webp" alt="pyro" width="18" height="18">. Suponha que esse supremo tem um dano igual a 10000</code>
+                    <br><br>
+                    <code> ==> 1U de Pyro <img src="./imgs/elements/pyroSymbol.webp" alt="pyro" width="18" height="18"> reage com 1.2U de Cryo <img src="./imgs/elements/cryoSymbol.webp" alt="cryo" width="18" height="18"> e ativa Derretimento.</code>
+                    <br><br>
+                    <code>Aqui, a ordem que os elementos foi aplicada faz com que a reação ativada seja direta.</code>
+                    <code> ==> O trigger consome 2U da Aura Cryo do inimigo e o supremo causa o dobro de dano (20000).</code> 
+                    <br><br>
+                    <code> O inimigo não possui mais aura.</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="celula-personagem">
+                    <img src="./imgs/emojis/Xiangling/xiangling-peek.webp" alt="Xiangling"> 
+                    <p>
+                        <a href="https://genshin-impact.fandom.com/wiki/Xiangling" rel="noopener noreferrer">Xiangling</a>
+                    </p>
+                </td>
+
+                <td class="exemplo-texto">
+                    <code>Porém, agora que o inimigo não tem mais uma Aura Cryo, o Supremo da Xiangling aplicará 1U de Pyro <img src="./imgs/elements/pyroSymbol.webp" alt="pyro" width="18" height="18"> no inimigo.</code>
+                    <br><br>
+                    <code>Não só a Xiangling tem uma aplicação Pyro muito rápida devido ao seu Pyronado, mas também o fato de que ela consome 2x a aura Cryo dificulta severamente a manutenção da reação Direta.</code>
+                    <br><br>
+                    <code>Em outras palavras, Xiangling passa a não ser o personagem que ativa as reações, e pyro deixa de ser o Trigger</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="celula-personagem">
+                    <img src="./imgs/emojis/Citlali/citlali-wink.webp" alt="Citlali"> 
+                    <p>
+                        <a href="https://genshin-impact.fandom.com/wiki/Citlali" rel="noopener noreferrer">Citlali</a>
+                    </p>
+                </td>
+
+                <td class="exemplo-texto">
+                    <code>Agora que a Xiangling aplicou Pyro (1U * 0.8 = 0.8U) no inimigo, a Citlali vem com sua Habilidade Elemental.</code>
+                    <br><br>
+                    <code>0.8U de Pyro <img src="./imgs/elements/pyroSymbol.webp" alt="pyro" width="18" height="18"> reage com 1.5U de Cryo <img src="./imgs/elements/cryoSymbol.webp" alt="cryo" width="18" height="18"> e ativa Derretimento Reverso.</code>
+                    <br><br>
+                    <code>Porém, a quantidade de Pyro consumida é reduzida pela metade e a aura consumida é de apenas 0.75U. Isso significa que o inimigo ainda tem uma Aura Pyro e permite que a Citlali ative mais uma reação!</code>
+                    <code>Entretanto, a reação causará menos dano, já que o multiplicador de dano das reações reversas é menor (1.5x) do que as reações diretas (2x).</code>
+                    <code>A Citlali consome mais U do que a Xiangling no seu talento (Habilidade Elemental da Citlali consome 1.5U enquanto o supremo da Xiangling consome 1U).</code>
+                    <code>Mas, mesmo assim, a Citlali não perde o domínio das reações, e continua ativando Derretimento Reverso no inimigo. Isso porque A Citlali não precisa se preocupar com o multiplicador de custo dobrando a aplicação dela toda vez, na verdade ela tem o benefício de só consumir metade da Aura presente no inimigo.</code>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="main-section" id="Conclusão">
+        <header>Conclusão</header>
+        <p> 
+            Compreender a Teoria do Medidor Elemental é o que separa um entendimento superficial de combate de um domínio 
+            avançado das mecânicas de Genshin. Embora o jogo apresente as reações de forma visualmente simples, saber 
+            manipular as Unidades de Medida (U), o decaimento das auras e a ordem de aplicação dos elementos permite ao 
+            jogador otimizar seus times de forma drástica. Ao controlar quem é o trigger e quem mantém a aura, é possível 
+            garantir que as reações ocorram de forma consistente, maximizando o dano causado.
+        </p>
+        </section>
+
+        <br><br>
+
+        <img src="./imgs/emojis/Yae-Miko/yae-miko-learn.webp" id="best-shrine-maiden" alt="Miko">
+        <h6 style="color: rgba(137, 43, 226, 0.653); text-align: center;">
+            Documentação Feita por João Victor dos Santos <br>
+            Com ajuda do Keqing Mains e da Genshin Impact Wiki. <br>
+        </h6>
+</main>
+</body>
+</html>
